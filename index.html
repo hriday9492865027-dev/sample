@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Sample</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --primary-hover: #333333;
+            --background-color: #ffffff;
+            --surface-color: #ffffff;
+            --text-color: #111111;
+            --text-secondary: #666666;
+            --border-color: #e5e7eb;
+            --input-bg: #f9fafb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            background-color: var(--surface-color);
+            /* Adding a subtle border instead of card shadow since background is white */
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .login-form h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .input-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background-color: var(--input-bg);
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .forgot-password {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .login-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .divider span {
+            padding: 0 0.75rem;
+        }
+
+        .google-btn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .google-btn:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Please enter your details to sign in.</p>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="form-actions">
+                <label class="remember-me">
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Sign in</button>
+
+            <div class="divider">
+                <span>or continue with</span>
+            </div>
+
+            <button type="button" class="google-btn">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M19.9998 10.2292C19.9998 9.54166 19.9329 8.92708 19.8258 8.33333H10.1992V12.0677H15.7513C15.6263 13.0625 14.9929 14.6146 13.5679 15.6615L13.5516 15.794L16.5826 18.0965L16.7925 18.1198C18.7058 16.3958 19.8258 13.8073 19.8258 10.6094L19.9998 10.2292Z"
+                        fill="#4285F4" />
+                    <path
+                        d="M10.1988 20C12.9546 20 15.2655 19.1146 16.9588 17.5833L13.7313 15.1146C12.8729 15.7187 11.7088 16.1458 10.1988 16.1458C7.45292 16.1458 5.11709 14.3906 4.27709 11.9167L4.14501 11.9275L0.993514 14.3168L0.948853 14.4375C2.65677 17.7604 6.18344 20 10.1988 20Z"
+                        fill="#34A853" />
+                    <path
+                        d="M4.27732 11.9167C4.05399 11.2708 3.92899 10.5833 3.92899 9.87504C3.92899 9.16671 4.05399 8.47921 4.27732 7.83337L4.27065 7.69533L1.08272 5.27258L1.03774 5.31254C0.323153 6.69796 -0.0701802 8.25004 -0.0701802 9.87504C -0.0701802 11.5 0.323153 13.0521 1.03774 14.4375L4.27732 11.9167Z"
+                        fill="#FBBC05" />
+                    <path
+                        d="M10.1988 3.60417C12.0838 3.60417 13.3905 4.40625 14.1338 5.08333L17.0305 2.29167C15.2563 0.666667 12.9546 -0.25 10.1988 -0.25C6.18344 -0.25 2.65677 1.98958 0.948853 5.3125L4.18844 7.83333C5.02761 5.35938 7.36333 3.60417 10.1988 3.60417Z"
+                        fill="#EA4335" />
+                </svg>
+                Google
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>
